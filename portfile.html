@@ -1,0 +1,359 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: black;
+                color: white;
+            }
+            #header{
+                width: 100%;
+                height: 100vh;
+                background-position: center;
+            }
+            .container{
+                padding: 10px 10%;
+            }
+            nav{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            nav ul li{
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+            }
+            nav ul li a{
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+            li a:hover{
+                color: darksalmon;
+                font-size:x-large;
+            }
+            .header-text{
+                margin-top: 2%;
+                font-size: 30px;
+            }
+            .header-text h1{
+                font-size: 40px;
+                margin-top: 3%;
+            }
+            .header-text h1 span{
+                color:darksalmon;
+            }
+            #img{
+                padding-top: 5%;
+            }
+            /* about */
+            #about{
+                margin-top: 5%;
+                color: rgb(237, 227, 231);
+            }
+            .sub-title{
+                font-size: 30px;
+                font-weight: 600;
+                color: white;
+            }
+            #tab-titles{
+                display:flex;
+                margin: 20px 0 40px;
+            }
+            .tab-links{
+                margin-right: 20px;
+                font-size: 20px;
+                font-weight: 500;
+                cursor: pointer;
+                position: relative;
+                width: 300%;
+            }
+            .tab-links:hover{
+                color:darksalmon;
+                font-size:x-large;
+            }
+            #tab-contents{
+                display: none;
+            }
+            #a{
+                font-size: 20px;
+                color:rgb(237, 227, 231);
+            }
+            #b{
+                font-size: 20px;
+                color:rgb(237, 227, 231);
+            }
+            #c{
+                font-size: 20px;
+                color:rgb(237, 227, 231);
+            }
+            /* about */
+            #services{
+                padding: 30px 0;
+            }
+            .services-list{
+                display:grid;
+                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+                grid-gap:40px;
+                margin-top:50px;
+            }
+            .services-list div{
+                background-color: rgb(120, 114, 114);
+                padding: 40px;
+                font-size: 13px;
+                font-weight: 300;
+                border-radius:10px;
+            }
+            .services-list div h2{
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+            .services-list div a{
+                text-decoration: underline;
+                color: white;
+                font-size: 12px;
+                margin-top:20px;
+                display: inline-block;
+            }
+            .services-list div:hover{
+                background-color: darksalmon;
+                transform:scale(1.1);
+            }
+            /* portfolio */
+            #portfolio{
+                padding: 50px 0;
+            }
+            .work-list{
+                display:grid;
+                grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+                grid-gap:40px;
+                margin-top:50px;
+            }
+            .work{
+                border-radius: 10px;
+                position: relative;
+            }
+            #x{
+                width:100%;
+            }
+            #y{
+                width:100%;
+            }
+            #z{
+                width:80%;
+            }
+            .work img{
+                border-radius: 10px;
+                display:block;
+            }
+            .layer{
+                width:100%;
+                height:100%;
+                background: linear-gradient(rgb(0,0,0,0.5),#e86a92);
+                border-radius: 10px;
+                position: absolute;
+                left:0;
+                bottom:0;
+                overflow:hidden;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 40px;
+                text-align: center;
+                transition: height 0.5s;
+            }
+            .layer h3{
+                font-weight: 500;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            .work-list div:hover{
+                transform:scale(1.1);
+            }
+            .btn{
+                display:block;
+                margin:50px auto;
+                width:fit-content;
+                border: 1px solid #e86a92;
+                padding: 14px 50px;
+                border-radius: 6px;
+                color:aliceblue;
+            }
+            .btn:hover{
+                background-color: #eb1357;
+            }
+            /* contact */
+            .contact-left{
+                flex-basis:35%;
+            }
+            .contact-right{
+                flex-basis:60%;
+            }
+            .contact-left p{
+                margin-top:30px;
+            }
+            .contact-right form{
+                width:100%;
+            }
+            form input,textarea{
+                width:100%;
+                border:0;
+                outline:none;
+                background-color:rgb(24, 16, 16);
+                padding:30px;
+                margin: 15px 0;
+                color:#fff;
+                font-size: 18px;
+                border-radius: 6px;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+        </style>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    </head>
+    <title>Portfolio</title>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+            <ul>
+                <li><a href='#header'>Home</a></li>
+                <li><a href='#about'>About</a></li>
+                <li><a href='#services'>Services</a></li>
+                <li><a href='#portfolio'>Work</a></li>
+                <li><a href='#contact'>Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>AI Engineer</p>
+            <h1>Hi, I am <span>Patel Vanshika</span> from Bharuch.</h1>
+            <img src="./photo.png" id="img">
+        </div>
+        </div>
+        </div>
+        <!-- about -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Innovative artificial engineer with 4 years of experience in application design, development, testing and deployment. Unmatched abilities to identify, understand and translate program requirements into sustainable advanced technical solutions through C++, Javascript and Python and other programs for continuous development of AI technologies. </p>
+                        <div id="tab-titles">
+                        <p id="skills" class = "tab-links" onclick="x()">Skills</p>
+                        <p id="experience" class = "tab-links" onclick="y()">Experience</p>
+                        <p id="education" class = "tab-links" onclick="z()">Education</p><br><br>
+                        </div>
+                        <div id="tab-contents">
+                        <div id="a">
+                                    <p><br>Building AI models<br></p>
+                                    <p>Use AI to empower organization<br></p>
+                                    <p>Machine Learning<br></p>
+                        </div>
+                        <div id="b">
+                                    <span><br>AI Lead-Noida (2019-2020)<br></span>
+                                    <span>Bot Developer-Verita Software (2020-2021)<br></span>
+                                    <span>AI Engineer-Pune (2021-today)<br></span>
+                        </div>
+                        <div id="c">
+                                    <span><br>B.Tech(IT)-Charusat University<br></span>
+                                    <span>M.Tech-MIT,Pune<br></span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <h2>Provision of AI equipments in homes</h2>
+                        <p>We aim to provide a cozy and comfortable life to all the people.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                       
+                        <h2>AI in hospital management system</h2>
+                        <p>AI in hospital is a necessity as it deducts human errors and ensures successful surgery.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <h2>Bot creation</h2>
+                        <p>Robots possessing human-like abilities are created for advancements in various sectors.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- portfolio -->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">My work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="./robot.png" id="x">
+                        <div class="layer">
+                         
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="./Product-Manager.jpg" id="y">
+                        <div class="layer">
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                <a href="#" class="btn">See more</a>
+            </div>
+        </div>
+        <!-- contact -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact me</h1>
+                        <p>Email: vanshi98@gmail.com</p>
+                        <p>Phone no.: 9191254590</p>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your name" required>
+                            <input type="email" name="Email" placeholder="Your email" required>
+                            <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                            <button type="submit" class="btn" style="background-color: black">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const s = document.getElementById("a");
+        const ex = document.getElementById("b");
+        const ed = document.getElementById("c");
+        const skills = document.getElementById("skills");
+        const experience = document.getElementById("experience");
+        const education = document.getElementById("education");
+        skills.addEventListener('click',function x(){
+            skills.appendChild(s);
+        })
+        experience.addEventListener('click',function y(){
+            experience.appendChild(ex);
+        })
+        education.addEventListener('click',function z(){
+            education.appendChild(ed);
+        })
+        </script>
+</html>
